@@ -2,3 +2,5 @@ ansible kubernetes -i inv.ini -b -m yum -a "name=wget state=latest" -f 100
 ansible kubernetes -i inv.ini -b -m setup
 ansible kubernetes -i inv.ini -m service -a name=firewalld state=started
 ansible kubernetes -i inv.ini -m file -a path=/root/abc.txt state=touch
+ansible kubernetes -i inv.ini -m file -a path=/root/abc.txt
+ansible kubernetes -i inv.ini -m user -a name=test

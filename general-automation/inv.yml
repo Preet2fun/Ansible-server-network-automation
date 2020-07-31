@@ -1,0 +1,14 @@
+all:
+  hosts:
+     172.16.8.45
+     172.16.8.242
+  children:
+    linux:
+      hosts:
+        172.16.8.45
+        172.16.8.242
+    kubernetes:
+      hosts:
+        master.kubernetes.com
+        172.16.8.242
+        172.16.9.112
