@@ -1,0 +1,10 @@
+---
+- hosts: kubernetes
+  become: yes
+  tasks:
+    - name: editing httpd conf file
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "new line has been added"
+      when:
+        ansible_host == '172.16.8.45'

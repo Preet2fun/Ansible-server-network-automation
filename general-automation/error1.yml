@@ -1,0 +1,12 @@
+---
+- hosts: kubernetes
+  become: yes
+  tasks:
+    - name : get url file
+      get_url:
+        url: "http://{{item}}/index.html"
+        dest: "/tmp/{{item}}"
+      ignore_errors: yes
+      with_items:
+          - 172.16.8.45
+          - 172.16.8.242

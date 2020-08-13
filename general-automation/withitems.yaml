@@ -1,0 +1,11 @@
+---
+- hosts: 172.16.8.45
+  become: yes
+  tasks:
+    - name: creating user with loop
+      user:
+        name: "{{item}}"
+      with_items:
+        - bob
+        - jone
+        - lee

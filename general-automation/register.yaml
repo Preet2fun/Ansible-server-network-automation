@@ -1,0 +1,13 @@
+---
+- hosts: 172.16.8.45
+  tasks:
+    - name: creating file and register its output
+      file:
+        path: /tmp/newfile
+        state: touch
+      register: output
+    - debug: msg="file created successfully at {{output.dest}} by {{output.group}}"
+    - name: use value from previouse reagister out put
+      lineinfile:
+        path: /tmp/newfile
+        line: "file with uid {{output.uid}} created successfully"

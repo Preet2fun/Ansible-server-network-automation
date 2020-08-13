@@ -1,0 +1,19 @@
+---
+- hosts: 172.16.8.45
+  become: yes
+  handlers:
+    - name: restart httpd service
+      service: name="httpd" state="restarted"
+      listen: "restart web"
+
+  tasks:
+    - name: change config file httpd.conf
+      replace:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '^DocumentRoot .*$'
+        replace: 'DocumentRoot "/var/www/html"'
+        backup: yes
+      notify: "restart web"
+
+
+
