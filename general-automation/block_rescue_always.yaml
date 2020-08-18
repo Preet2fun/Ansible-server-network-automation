@@ -1,0 +1,12 @@
+---
+- hosts: local
+  tasks:
+   - name: get file
+     block:
+       - get_url:
+           url: "http://172.16.8.45/index.html"
+           dest: "/tmp/index_file"
+     rescue:
+       - debug: msg="The file does not exists!"
+     always:
+       - debug: msg="play done!" 

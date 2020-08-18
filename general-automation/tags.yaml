@@ -1,0 +1,18 @@
+---
+- hosts: kubernetes
+  tasks:
+   - name: deploy web app
+     copy:
+       src: /home/motadata/hello
+       dest: /var/www/html/hello
+     tags:
+       - webdeploy
+
+- hosts: kubernetes
+  tasks:
+  - name: deploy database server
+    copy:
+      src: /home/motadata/data.sql
+      dest: /var/www/html/data.sql
+    tags:
+      - dbdeploy 
