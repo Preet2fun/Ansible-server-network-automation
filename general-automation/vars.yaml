@@ -1,0 +1,14 @@
+---
+- hosts: local
+  vars:
+    inv_file: /home/motadata/vars/inv.txt
+  tasks:
+    - name: create file using variable
+      file:
+        path: "{{inv_file}}"
+        state: touch
+
+    - name: generate inventory file
+      lineinfile:
+        path: "{{inv_file}}"
+        line: "{{ groups['linux'] | join(' ') }}"

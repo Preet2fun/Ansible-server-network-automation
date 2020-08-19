@@ -1,0 +1,23 @@
+# this playbook will read variable from external file
+# usage: ansible-playbook <playbook name> -e "@users.lst"
+
+
+
+---
+- hosts: local
+  vars:
+    inv_file: /home/motadata/vars/user
+  tasks:
+    - name: create file using variable
+      file:
+        path: "{{inv_file}}"
+        state: touch
+
+    - name: generate inventory file
+      lineinfile:
+        path: "{{inv_file}}"
+        line: "{{ item }}"
+      with_items:
+        - "{{ admin }}"
+        - "{{ dev }}"
+        - "{{ qa }}"
