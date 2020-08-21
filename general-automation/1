@@ -1,0 +1,6 @@
+---
+- hosts: local
+  roles:
+    - apache
+  vars:
+    apache_server_admin: test@example.com
