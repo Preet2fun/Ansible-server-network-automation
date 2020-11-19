@@ -1,0 +1,3 @@
+---
+ansible_user: mpls1
+ansible_password: mpls1
