@@ -2,3 +2,10 @@
 ansible_user: mpls1
 ansible_password: mpls1
 ansible_become_password: mpls1
+
+
+
+desc:
+  - description WAN1
+  - ip address 172.16.1.1 255.255.255.0
+  - no shutdown

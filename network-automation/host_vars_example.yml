@@ -1,0 +1,28 @@
+# host_vars : The host-specific variables are defined in the host_vars directory . Each file in the host_vars directory is named after the host it represents.
+# before - Ansible will run the default interface GigabitEthernet0/1 command prior to actually running the interface configs.
+
+
+---
+
+- name: host_vars Example
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: Interface configs
+      ios_config:
+        lines: "{{ desc }}"
+        parents: Interface GigabitEthernet0/1
+        before: default interface GigabitEthernet0/1
+      register: output
+
+    - name: Save running-config
+      ios_config:
+        save_when: modified
+
+
+    - name: print output
+      debug:
+        var: output
+
