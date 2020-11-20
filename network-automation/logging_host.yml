@@ -1,0 +1,16 @@
+---
+
+- name: Cisco syslog server
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: configure logging host
+      ios_config:
+        lines: logging host 192.168.9.70
+      register: output
+
+    - name: print output
+      debug:
+        var: output

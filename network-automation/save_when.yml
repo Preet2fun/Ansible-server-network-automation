@@ -1,0 +1,18 @@
+#save_when parameter : There is another  way to save the configuration by using save_when parameter as shown below. If the argument is set to modified, then the running-config wi#ll only be copied to the startup-config if it has changed since the last save to startup-config.
+
+---
+
+- name: Disable CDP
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: Disable CDP on both routers
+      ios_config:
+        lines:
+          - no cdp run
+    
+    - name: Save running-config
+      ios_config:
+        save_when: modified

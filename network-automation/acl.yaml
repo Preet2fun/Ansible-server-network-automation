@@ -1,0 +1,16 @@
+---
+
+- name: Variable Lab
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: configure ACL
+      ios_config:
+        lines: "{{ acl }}"
+      register: output
+
+    - name: print output
+      debug:
+        var: output

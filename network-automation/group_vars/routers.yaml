@@ -1,5 +1,14 @@
+#A group_vars file contain all the information that is unique for each group of devices.
+#Privileged EXEC mode : How can we tell Ansible to go into enable mode, well by using the ansible_become variable.
+
 ---
 
 ansible_network_os: ios
+ansible_become: yes
+ansible_become_method: enable
 
+
+acl:
+  - access-list 101 permit tcp any any eq 80
+  - access-list 101 permit tcp any any eq 443
 

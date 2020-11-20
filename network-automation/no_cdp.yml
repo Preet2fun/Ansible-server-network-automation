@@ -1,0 +1,23 @@
+#Sometimes we need a task to run only when a change is made to the devices. For example, we may want to save the running-config if a change is made, 
+#but not if the configuration is unchanged. Ansible uses handlers to address this use case. Handlers are tasks that only run when notified.
+
+
+---
+
+- name: Disable CDP
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: Disable CDP on both routers
+      ios_config:
+        lines:
+          - no cdp run
+      notify: save config
+
+
+  handlers:
+    - name: save config
+      ios_command:
+        commands: wr

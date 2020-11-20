@@ -1,0 +1,20 @@
+---
+
+- name: Parents Example
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: Interface Description - WAN
+      ios_config:
+        lines:
+          - description WAN
+        parents: Interface FastEthernet1/1
+      notify: save config
+
+
+  handlers:
+    - name: save config
+      ios_command:
+        commands: wr

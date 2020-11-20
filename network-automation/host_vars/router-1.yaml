@@ -1,3 +1,4 @@
 ---
 ansible_user: mpls1
 ansible_password: mpls1
+ansible_become_password: mpls1
