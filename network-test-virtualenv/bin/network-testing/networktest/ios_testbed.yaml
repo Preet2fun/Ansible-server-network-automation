@@ -1,0 +1,68 @@
+# Example
+# -------
+#
+#   an example testbed file - ios_testbed.yaml
+
+testbed:
+    name: IOS_Testbed
+    #credentials:
+    #    default:
+    #        username: admin
+    #        password: cisco
+    #    enable:
+    #        password: cisco
+
+devices:
+    mpls1: # <----- must match to your device hostname in the prompt
+        type: 'router'
+        os: 'ios'
+        platform: ios
+        alias: 'mplsrouter1'
+        credentials:
+            default:
+                username: mpls1
+                password: mpls1
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.100.100.111"
+    mpls2:
+        type: 'router'
+        os: 'ios'
+        platform: ios
+        alias: 'mplsrouter2'
+        credentials:
+            default:
+                username: mpls2
+                password: mpls2
+            enable:
+                password: mpls2
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.100.100.112"
+topology:
+    mpls1:
+        interfaces:
+            FastEthernet0/0:
+                ipv4: 10.0.0.1/24
+                #ipv6: '10:10:10::1/64'
+                link: link-1
+                type: ethernet
+            Loopback0:
+                ipv4: 1.1.1.1/32
+                #ipv6: '192::1/128'
+                link: ios1_Loopback0
+                type: loopback
+    mpls2:
+        interfaces:
+            FastEthernet0/0:
+                ipv4: 10.0.0.2/24
+                #ipv6: '10:10:10::2/64'
+                link: link-1
+                type: ethernet
+            Loopback0:
+                ipv4: 2.2.2.2/32
+                #ipv6: '192::2/128'
+                link: ios2_Loopback0
+                type: loopback

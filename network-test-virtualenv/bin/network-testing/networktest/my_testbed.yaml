@@ -1,0 +1,45 @@
+devices:
+    mpls-1:
+        type: 'router'
+        os: 'ios'
+        platform: ios
+        alias: 'helper1'
+        credentials:
+            default:
+                username: mpls1
+                password: mpls1
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.100.100.111"
+
+
+    mpls-2:
+        type: 'router'
+        os: 'ios'
+        platform: ios
+        alias: 'helper'
+        credentials:
+            default:
+                username: mpls2
+                password: mpls2
+            enable:
+                password: mpls2
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.100.100.111"
+
+    CISCOCSR:
+        type: 'router'
+        os: 'iosxe'
+        platform: asr1k
+        alias: 'uut'
+        credentials:
+            default:
+                username: admin
+                password: Mind@123
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.100.100.115"
