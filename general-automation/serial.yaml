@@ -1,0 +1,10 @@
+---
+- hosts: kubernetes
+  serial:
+    - 30%
+    - 1
+    - 2
+  max_fail_percentage: 30
+  tasks:
+  - name: installing httpd 
+    yum: name=httpd state=latest

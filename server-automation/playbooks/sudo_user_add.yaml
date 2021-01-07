@@ -5,7 +5,7 @@
 # An incorrect entry into the sudoers environment can prevent sudo from working for any account.
 
 ---
-- hosts: local
+- hosts: CentOS
   become: yes
  
   tasks:
@@ -25,8 +25,8 @@
           groups: "{{ item.groups }}"                                                                                                     
           append: true
          loop:
-          - { name: 'NocUser', groups: 'wheel', password: 'M!nd@2020#' }
-          - { name: 'AdminUser', groups: 'wheel', password: 'M!nd@2020#' }
+          - { name: 'NocUser', groups: 'wheel', password: 'Mind@2020#!' }
+          - { name: 'AdminUser', groups: 'wheel', password: 'Mind@2020#!' }
 
        - name: Allow passwordless sudo in wheel group
          lineinfile:
