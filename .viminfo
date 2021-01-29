@@ -8,10 +8,11 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/host
+~Msle0~/\<print\>
 
 # Command Line History (newest to oldest):
 :wq!
+:q
 :q!
 :q1
 :qw!
@@ -19,6 +20,7 @@
 :wq!!
 
 # Search String History (newest to oldest):
+? \<print\>
 ?/host
 
 # Expression History (newest to oldest):
@@ -29,37 +31,57 @@
 
 # Registers:
 ""1	LINE	0
-	                password: mpls1
+	__version__ = 1.0
 "2	LINE	0
-	            enable:
+	__credits__ = []
 "3	LINE	0
-	ansible_password: mpls1
+	__contact__ = ["hapresto@cisco.com"]
 "4	LINE	0
-	ansible_user: mpls1
+	__copyright__ = "Copyright (c) 2019, Cisco Systems Inc."
 "5	LINE	0
-	---
+	__author__ = "Hank Preston"
 "6	LINE	0
-	#nonsensitive data
+	
 "7	LINE	0
-	ansible_network_os: ios
+	# for documentation on pyATS test scripts
 "8	LINE	0
-	ansible_user: mpls1
+	# see https://pubhub.devnetcloud.com/media/pyats/docs/aetest/index.html
 "9	LINE	0
 	
+	import logging
 
 # File marks:
-'0  44  0  ~/network-test-virtualenv/bin/network-testing/networktest/argadd_basic.py
-'1  18  17  ~/network-test-virtualenv/bin/network-testing/networktest/helloworld.py
-'2  23  38  ~/network-test-virtualenv/bin/network-testing/networktest/basic_link.py
-'3  13  37  ~/network-test-virtualenv/bin/network-testing/networktest/basic_link.py
-'4  6  21  ~/network-test-virtualenv/bin/network-testing/networktest/basic_link.py
-'5  40  0  ~/network-test-virtualenv/bin/network-testing/networktest/ios_testbed.yaml
-'6  75  623  ~/network-test-virtualenv/bin/network-testing/networktest/ios_testbed.yaml
-'7  135  623  ~/network-test-virtualenv/bin/network-testing/networktest/ios_testbed.yaml
-'8  15  37  ~/network-test-virtualenv/bin/network-testing/networktest/basic_device_connection.py
-'9  33  11  ~/network-test-virtualenv/bin/network-testing/networktest/my_testbed.yaml
+'0  26  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'1  3  24  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'2  21  33  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'3  22  55  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'4  13  54  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'5  10  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'6  7  22  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+'7  42  37  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+'8  87  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+'9  84  32  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
 
 # Jumplist (newest first):
+-'  26  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  3  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  21  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  22  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  13  4  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  10  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  7  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  1  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+-'  42  37  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+-'  87  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+-'  84  4  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+-'  26  8  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+-'  74  4  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+-'  1  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+-'  33  17  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed.yaml
+-'  53  20  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed.yaml
+-'  1  0  ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed.yaml
+-'  5  178  ~/network-test-virtualenv/bin/network-testing/networktest/script_argument_demo_job.py
+-'  1  0  ~/network-test-virtualenv/bin/network-testing/networktest/script_argument_demo_job.py
 -'  44  0  ~/network-test-virtualenv/bin/network-testing/networktest/argadd_basic.py
 -'  1  0  ~/network-test-virtualenv/bin/network-testing/networktest/argadd_basic.py
 -'  18  17  ~/network-test-virtualenv/bin/network-testing/networktest/helloworld.py
@@ -138,29 +160,84 @@
 -'  10  8  ~/server-automation/roles/vm-remove-name/tasks/main.yml
 -'  8  20  ~/server-automation/remove-vm-prod.yaml
 -'  1  0  ~/server-automation/remove-vm-prod.yaml
--'  2  43  ~/server-automation/vms-to-remove.ini
--'  1  0  ~/server-automation/vms-to-remove.ini
--'  35  4  ~/server-automation/roles/vm-deploy-template/tasks/main.yml
--'  8  24  ~/server-automation/deploy-qa-prod.yml
--'  1  0  ~/server-automation/deploy-qa-prod.yml
--'  2  11  ~/server-automation/vms-to-deploy.ini
--'  1  0  ~/server-automation/vms-to-deploy.ini
--'  1  0  ~/server-automation/roles/deploy-vsphere-template/tasks/main.yml
--'  29  0  ~/server-automation/roles/vm-deploy-template/vars/main.yml
--'  1  0  ~/server-automation/roles/vm-deploy-template/vars/main.yml
--'  56  0  ~/server-automation/roles/vm-deploy-template/vars/main.yml
--'  1  0  ~/visudo
--'  29  71  ~/server-automation/playbooks/sudo_user_add.yaml
--'  8  0  ~/server-automation/playbooks/sudo_user_add.yaml
--'  10  0  ~/server-automation/playbooks/sudo_user_add.yaml
--'  5  11  ~/server-automation/inv.ini
--'  1  0  ~/server-automation/inv.ini
--'  7  24  ~/general-automation/serial.yaml
--'  10  4  ~/general-automation/serial.yaml
--'  1  0  ~/general-automation/serial.yaml
--'  6  40  ~/general-automation/role-php-install.yaml
 
 # History of marks within files (newest to oldest):
+
+> ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/connect_issue_command.py
+	"	26	0
+	^	26	0
+	.	27	0
+	+	8	20
+	+	10	20
+	+	7	23
+	+	1	62
+	+	6	46
+	+	10	0
+	+	9	71
+	+	9	68
+	+	28	0
+	+	10	23
+	+	13	11
+	+	9	71
+	+	16	72
+	+	28	0
+	+	18	31
+	+	19	31
+	+	21	58
+	+	22	55
+	+	18	22
+	+	19	22
+	+	21	33
+	+	5	33
+	+	9	71
+	+	10	0
+	+	15	30
+	+	16	0
+	+	26	41
+	+	27	0
+	+	26	0
+	+	3	24
+	+	26	0
+	+	27	0
+
+> ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed_connection.py
+	"	42	37
+	^	42	38
+	.	42	8
+	+	2	3
+	+	74	0
+	+	6	0
+	+	6	0
+	+	23	2
+	+	6	0
+	+	81	34
+	+	84	3
+	+	42	8
+
+> ~/network-test-virtualenv/bin/network-testing/networktest/network_test_project/testbed.yaml
+	"	33	17
+	^	33	18
+	.	33	17
+	+	7	10
+	+	19	18
+	+	21	16
+	+	28	13
+	+	32	53
+	+	37	22
+	+	21	24
+	+	40	0
+	+	48	0
+	+	53	41
+	+	32	32
+	+	34	0
+	+	33	17
+
+> ~/network-test-virtualenv/bin/network-testing/networktest/script_argument_demo_job.py
+	"	5	178
+	^	5	179
+	.	5	178
+	+	12	9
+	+	5	178
 
 > ~/network-test-virtualenv/bin/network-testing/networktest/argadd_basic.py
 	"	44	0
@@ -387,27 +464,3 @@
 	.	11	39
 	+	16	0
 	+	11	39
-
-> ~/network-automation/ansible.cfg
-	"	19	49
-	^	19	50
-	.	19	37
-	+	19	37
-
-> ~/network-automation/inventory.ini
-	"	3	7
-	^	3	8
-	.	3	7
-	+	3	7
-
-> ~/network-automation/README.txt
-	"	1	90
-	^	1	91
-	.	1	0
-	+	1	0
-
-> ~/network-automation/show_ip_int_brief.yml
-	"	18	31
-	^	18	32
-	.	18	0
-	+	18	0

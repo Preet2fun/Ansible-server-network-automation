@@ -1,186 +1,3 @@
-vim vars_from_file.yaml
-cat vars.yaml >> vars_from_file.yaml 
-vim vars_from_file.yaml 
-vim users.lst
-ansible-playbook vars_from_file.yaml -e "@users.lst"
-vim users.lst 
-ansible-playbook vars_from_file.yaml -e "@users.lst"
-vim vars_from_file.yaml 
-clear
-ansible-playbook vars_from_file.yaml -e "@users.lst"
-cd /home/motadata/vars/
-ls
-cat user 
-clear
-cd
-ls
-cd server-automation/
-ls
-cd playbooks/
-ls
-vim sudo_user_add.yaml
-cat /home/motadata/template/config.txt 
-ls
-vim sudo_user_add.yaml 
-ansible-playbook sudo_user_add.yaml 
-clear
-vim sudo_user_add.yaml 
-ansible-playbook sudo_user_add.yaml 
-vim sudo_user_add.yaml 
-clear
-ansible-playbook sudo_user_add.yaml 
-vim sudo_user_add.yaml 
-clear
-ansible-playbook sudo_user_add.yaml
-vim sudo_user_add.yaml 
-clear
-ansible-playbook sudo_user_add.yaml
-vim sudo_user_add.yaml 
-clear
-ansible-playbook sudo_user_add.yaml
-vim sudo_user_add.yaml 
-clear
-ansible-playbook sudo_user_add.yaml
-vim sudo_user_add.yaml 
-clear
-ansible-playbook sudo_user_add.yaml
-vim sudo_user_add.yaml
-clear
-ansible-playbook sudo_user_add.yaml
-clear
-vim sudo_user_add.yaml
-ansible-playbook sudo_user_add.yaml
-su NocUser
-su AdminUser
-clear
-ls
-cd ..
-git add general-automation/ server-automation/
-git add general-automation/* server-automation/*
-clear
-pwd
-cd server-automation/
-ls
-git add .
-git status
-git commit -m "sudo user playbook and var playbook"
-git push -u origin master
-clear
-ansible local -m setup
-ansible local -m setup -a filter="*ip*"
-ansible local -m setup -a filter="*distribution*"
-cd /etc/ansible/
-ls
-cd roles/
-ls
-cd
-clear
-cd general-automation/
-ls
-vim role-install.yaml 
-cat role-install.yaml 
-ansible-playbook role-install.yaml 
-grep Amin /etc/httpd/conf/httpd.conf 
-grep Admin /etc/httpd/conf/httpd.conf 
-clear
-cd role
-cd roles
-ls
-ansible-galaxy init php-webserver
-vim php-webserver/tasks/main.yml 
-vim php-webserver/meta/main.yml 
-ls
-cd ..
-ls
-mv role-install.yaml role-apache-install.yaml
-cp role-apache-install.yaml role-php-install.yaml 
-vim role-php-install.yaml 
-clear
-ls
-cd general-automation/
-ls
-mkdir roles
-ls
-cd roles/
-ls
-ansible-galaxy init apache
-ls
-cd apache/
-ls
-cd defaults/
-cd ../files/
-ls
-cd ../handlers/
-l
-ls
-cat main.yml 
-clear
-cd ..
-ls
-cd meta/
-ls
-cat main.yml 
-cd ../
-ls
-cat README.md 
-cd tasks/
-ls
-cat main.yml 
-cd ../
-ls
-cd templates/
-ls
-cd ../tests/
-ls
-cat inventory 
-cat test.yml 
-cd ..
-clear
-ls
-vim tasks/main.yml 
-cd general-automation/
-ls
-cd roles/apache/templates/
-clear
-scp root@172.16.8.45:/etc/httpd/conf/httpd.conf .
-ls
-mv httpd.conf httpd.conf.j2
-vim httpd.conf.j2 
-cd ..
-vim defaults/main.yml 
-cd ..
-ls
-vim roles/apache/handlers/main.yml 
-vim role-install.yaml
-ansible-playbook role-install.yaml 
-cat role-install.yaml 
-cat roles/apache/tasks/main.yml 
-vim roles/apache/tasks/main.yml 
-clear
-ansible-playbook role-install.yaml
-grep Admin /etc/httpd/conf/httpd.conf 
-cd general-automation/
-ls
-vim role-php-install.yaml 
-ls -l role*
-vim role-php-install.yaml
-ls -a
-rm -rf .role-php-install.yaml.swp 
-vim role-php-install.yaml 
-clear
-ansible-playbook role-php-install.yaml 
-ls
-cd role
-cd roles
-ls
-cat ../role-apache-install.yaml 
-cat ../roles/php-webserver/
-cat ../role-php-install.yaml 
-vim ../role-php-install.yaml 
-clear
-cd ..
-ansible-playbook role-php-install.yaml 
-git add .
 git commit -m "role for php and apache added"
 git push -u origin master
 clear
@@ -998,3 +815,186 @@ clear
 ls
 vim argadd_basic.py
 python argadd_basic.py --testbed ios_testbed.yaml --vlan 50
+ls
+git add .
+cd network-test-virtualenv/
+git add .
+git commit -m "argument added"
+git push -U origin master
+git push -u origin master
+clear
+ls
+cd bin/network-testing/
+ls
+cd networktest/
+ls
+clear
+ls
+cd network-test-virtualenv/
+ls
+source bin/activate
+ls
+cd bin/
+ls
+cd network-testing/
+ls
+cd networktest/
+ls
+git add .
+git commit -m "argument add feature for ptest"
+git pusg origin master
+git push origin master
+history
+git status
+ls
+git add .
+git status
+git commit -m "argument added"
+ls
+pwd
+git status
+git remote -v
+git remote set-url origin https://github.com/Preet2fun/Ansible-server-network-automation.git
+git remote origin https://github.com/Preet2fun/Ansible-server-network-automation.git
+git remote origin add https://github.com/Preet2fun/Ansible-server-network-automation.git
+git remote add origin https://github.com/Preet2fun/Ansible-server-network-automation
+git remote -v
+git push origin master
+git add .
+git commit -m "changes"
+clear
+ls
+vim script_argument_demo_job.py
+pyats run job script_argument_demo_job.py --testbed-file ios_testbed.yaml 
+clear
+pyats version check
+ls
+mkdir network_test_project
+clear
+cd network_test_project/
+cp ../ios_testbed.yaml testbed.yaml
+ls
+vim testbed.yaml
+pyats --help
+pyats validate --help
+pyats validate testbed --help
+pyats validate testbed testbed.yaml 
+vim testbed.yaml
+pyats validate testbed testbed.yaml 
+clear
+ls
+clear
+ls
+cd network-test-virtualenv/
+ls
+cd bin/
+source activate
+cd network-testing/
+ls
+cd networktest/
+ls
+clear
+git status
+ls
+source network-test-virtualenv/bin/activate
+ls
+cd network-test-virtualenv/bin/network-testing/networktest/
+ls
+cd network_test_project/
+ls
+clear
+git status
+ls
+cat testbed.yaml 
+ls
+clear
+vim testbed_connection.py
+vim testbed_connection.py 
+s
+ls
+python testbed_connection.py 
+python testbed_connection.py --testbed testbed.yaml
+vim testbed_connection.py
+clear
+source network-test-virtualenv/bin/activate
+cd network-test-virtualenv/bin/network-testing/networktest/
+ls
+cd network_test_project/
+ls
+clear
+source network-test-virtualenv/bin/activate
+cd network-test-virtualenv/bin/network-testing/networktest/
+ls
+cd network_test_project/
+ls
+vim testbed_connection.py 
+python testbed_connection.py --testbed testbed.yaml
+source network-test-virtualenv/bin/activate
+pwd
+cd network-test-virtualenv/bin/network-testing/
+ls
+cd networktest/
+ls
+cd network_test_project/
+ls
+clear
+ls
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+clear
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+clear
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+python connect_issue_command.py --testbed testbed.yaml
+vim connect_issue_command.py
+clear
+ls
+source network-test-virtualenv/bin/activate
+pwd
+cd network-test-virtualenv/bin/network-testing/networktest/
+ls
+cd network_test_project/
+clear
+ls
+cat connect_issue_command.py 
+clear
+git status
+cd ..
+ls
+cd ..
+ls
+git add .
+git commit -m "connection cheking"
+git push -U origin master
+git push origin master
+ls
+cd networktest/
+ls
+cd network_test_project/
+ls
+git add .
+git commit -m "connection"
+cd ..
+ls
+cd network_test_project/
+ls
+cd ..
+ls
+git pull
+git push origin master
+cd
+clear
+dactivate
+exit
